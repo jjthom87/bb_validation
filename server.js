@@ -2,7 +2,7 @@ require('dotenv').config();
 
 var express = require('express');
 var app = express();
-const controller = require("./controller.js");
+const controller = require("./services/controller.js");
 
 controller(app);
 

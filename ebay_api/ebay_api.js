@@ -3,9 +3,9 @@ var auth = require("./ebay_auth.js");
 
 var user = {token: null}
 
-const getItemsFromSearch = async function(searchQuery, cb){
+const getItemsFromSearch = async function(bidCount, cb){
   console.log("making request to ebay")
-  var cool = "https://api.ebay.com/buy/browse/v1/item_summary/search?&q=" + searchQuery;
+  var url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=beanie+baby&filter=buyingOptions:{AUCTION}&filter=bidCount:" + bidCount;
 
   if(!user.token){
     user.token = await auth.getToken();
@@ -13,7 +13,7 @@ const getItemsFromSearch = async function(searchQuery, cb){
   var headers = {"Authorization": "Bearer " + user.token}
 
   const options = {
-    url: cool,
+    url: url,
     headers: headers
   };
 
