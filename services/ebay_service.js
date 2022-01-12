@@ -12,9 +12,15 @@ exports.searchBeanieBabiesAuctions = async function(){
 
 exports.searchByBeanie = async function(beanie){
   return new Promise(async function(resolve,reject){
-    const dbRecords = validationService.getValues(beanie);
+    const highestValue = await validationService.getValues(beanie, null, null);
     await ebayApi.getItemsFromSearch({beanie: beanie}, function(ebayResult){
-      resolve(result);
+      const validValues = [];
+      ebayResult.forEach((e) => {
+        if(parseFloat(e.price.value) > highestValue){
+          validValues.push(e)
+        }
+      })
+      resolve(validValues);
     });
   });
 }
