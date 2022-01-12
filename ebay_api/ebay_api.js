@@ -3,9 +3,16 @@ var auth = require("./ebay_auth.js");
 
 var user = {token: null}
 
-const getItemsFromSearch = async function(bidCount, cb){
+const getItemsFromSearch = async function(obj, cb){
   console.log("making request to ebay")
-  var url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=beanie+baby&filter=buyingOptions:{AUCTION}&filter=bidCount:" + bidCount;
+
+  let url;
+  if(obj.bidCount){
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=beanie+baby&limit=150&filter=buyingOptions:{AUCTION}&filter=bidCount:[1..75]";
+  } else {
+    const beanie = obj.beanie.split(" ").join("+") + "+beanie+baby";
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q="+beanie+"&limit=150";
+  }
 
   if(!user.token){
     user.token = await auth.getToken();
