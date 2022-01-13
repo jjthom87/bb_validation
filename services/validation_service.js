@@ -29,7 +29,7 @@ exports.getValues = async function(beanie, mint, tag){
         }
       });
 
-      databaseConnection.end();
+      // databaseConnection.end();
 
       resolve(values.sort()[values.length - 1]);
     });
