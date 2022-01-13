@@ -19,6 +19,11 @@ exports.getValues = async function(beanie, mint, tag){
               value.forEach((v) => {
                 values.push(parseInt(v));
               })
+            } else {
+              value = value.split("-")
+              value.forEach((v) => {
+                values.push(parseInt(v));
+              })
             }
           }
         }

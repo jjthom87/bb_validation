@@ -8,7 +8,7 @@ const getItemsFromSearch = async function(obj, cb){
 
   let url;
   if(obj.bidCount){
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=beanie+baby&limit=150&filter=buyingOptions:{AUCTION}&filter=bidCount:[1..75]";
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=beanie+baby&limit=200&filter=buyingOptions:{AUCTION}&filter=bidCount:[1..75]";
   } else {
     const beanie = obj.beanie.split(" ").join("+") + "+beanie+baby";
     url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q="+beanie+"&limit=150";

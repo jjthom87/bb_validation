@@ -57,3 +57,23 @@
   "topRatedBuyingExperience":false,
   "priorityListing":true
 }
+
+{
+  "itemId":"v1|313821542278|0",
+  "title":"TY Beanie  Baby December",
+  "image":{
+    "imageUrl":"https://i.ebayimg.com/thumbs/images/g/-osAAOSwNyxh1m1X/s-l225.jpg"
+  },
+  "itemHref":"https://api.ebay.com/buy/browse/v1/item/v1%7C313821542278%7C0",
+  "seller":{
+    "username":"chemar713",
+    "feedbackPercentage":"100.0",
+    "feedbackScore":62
+  },
+  "condition":"New",
+  "conditionId":"1000",
+  "thumbnailImages":[{"imageUrl":"https://i.ebayimg.com/images/g/-osAAOSwNyxh1m1X/s-l1600.jpg"}],
+  "shippingOptions":[{"shippingCostType":"CALCULATED"}],
+  "buyingOptions":["AUCTION"],
+  "bidCount":1,
+  "currentBidPrice":{"value":"0.99","currency":"USD"},"itemWebUrl":"https://www.ebay.com/itm/313821542278?hash=item491138b786:g:-osAAOSwNyxh1m1X","itemLocation":{"postalCode":"731**","country":"US"},"categories":[{"categoryId":"440"},{"categoryId":"220"},{"categoryId":"19203"},{"categoryId":"49019"},{"categoryId":"19205"}],"additionalImages":[{"imageUrl":"https://galleryplus.ebayimg.com/ws/web/313821542278_2_0_1/225x225.jpg"}],"adultOnly":false,"legacyItemId":"313821542278","availableCoupons":false,"itemEndDate":"2022-01-13T04:17:36.000Z","topRatedBuyingExperience":false,"priorityListing":false}

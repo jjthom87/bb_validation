@@ -5,7 +5,10 @@ const validationService = require("./validation_service.js");
 exports.searchBeanieBabiesAuctions = async function(){
   return new Promise(async function(resolve,reject){
     await ebayApi.getItemsFromSearch({bidCount: true}, function(result){
-      resolve(result);
+      const sortedResult = result.sort(function (a, b) {
+        return b.currentBidPrice.value - a.currentBidPrice.value;
+      });
+      resolve(sortedResult);
     });
   });
 }
