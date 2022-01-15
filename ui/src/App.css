@@ -1,20 +1,53 @@
 .App {
 }
 
-*{
+#wrapper {
+  /* width:500px; */
+  margin:0 auto;
+}
+
+#header {
+  background-color:yellow;
+  font-size:50px;
+  text-align:center;
+}
+
+#body {
+  overflow:auto;
+}
+
+#sidebar {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 225px;
+  height: 100%; */
+
+  float:left;
+  width:150px;
+  background-color:#ccc;
+  min-height:400px;
+
+}
+
+#content {
+  margin-left: 300px;
+}
+
+/* *{
     list-style: none;
     text-decoration: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-}
+} */
 
-body{
+/* body{
     background: #f5f6fa;
 }
 
-/* .wrapper .sidebar{
+.wrapper .sidebar{
     background: rgb(5, 68, 104);
     position: fixed;
     top: 0;

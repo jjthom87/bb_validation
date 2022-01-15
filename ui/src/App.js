@@ -32,23 +32,23 @@ class App extends Component{
   }
   render(){
     return(
-      <div className="wrapper">
-        <header>
-        </header>
-
-        <div className="sidebar">
+        <div id="wrapper">
+            <div id="header"> HEADER </div>
+            <div id="body">
+                <div id="sidebar"> SIDEBAR </div>
+                <div id="content">
+                  <ul>
+                    {this.state.items.map(item => (
+                      <li key={item.itemId}>
+                        <p>{item.itemId}</p>
+                        <p>{item.price.value}</p>
+                        <img src={item.image.imageUrl} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+            </div>
         </div>
-
-        <ol>
-          {this.state.items.map(item => (
-            <li key={item.itemId}>
-              <p>{item.itemId}</p>
-              <img src={item.image.imageUrl} />
-            </li>
-          ))}
-        </ol>
-
-      </div>
     );
   }
 }

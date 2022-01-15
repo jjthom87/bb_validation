@@ -19,7 +19,7 @@ exports.searchByBeanie = async function(beanie){
     await ebayApi.getItemsFromSearch({beanie: beanie}, function(ebayResult){
       const validValues = [];
       ebayResult.forEach((e) => {
-        if(parseFloat(e.price.value) < highestValue){
+        if(parseFloat(e.price.value) < highestValue && e.title.toLowerCase().includes(beanie.toLowerCase())){
           validValues.push(e)
         }
       })
