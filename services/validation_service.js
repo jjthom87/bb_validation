@@ -1,5 +1,17 @@
 var databaseConnection = require("./../db/connection.js");
 
+exports.getAllBeanies = async function(){
+  return new Promise(async function(resolve,reject){
+    databaseConnection.query("SELECT * FROM `2022`", function(err, records){
+      if(err){
+        throw new Error(err)
+      }
+
+      resolve(records);
+    });
+  });
+}
+
 exports.getValues = async function(beanie, mint, tag){
   return new Promise(async function(resolve,reject){
     databaseConnection.query("SELECT * FROM `2022`", function(err, records){
@@ -27,6 +39,9 @@ exports.getValues = async function(beanie, mint, tag){
             }
           }
         }
+        // else if (beanie.toLowerCase().){
+        //
+        // }
       });
 
       // databaseConnection.end();
@@ -34,4 +49,8 @@ exports.getValues = async function(beanie, mint, tag){
       resolve(values.sort()[values.length - 1]);
     });
   });
+}
+
+function matchThis(){
+
 }
